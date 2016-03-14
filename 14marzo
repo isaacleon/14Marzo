@@ -1,3 +1,5 @@
+TRABAJO EN EQUIPO
+
 basedatos<- ts(read.csv(("C:\\Users\\SALA-C22\\Downloads\\basedatos.csv"), header=T), frequency = 12, start = 2013)
 basedatos
 fondos<- ts(basedatos[,1], start=2013, freq=12)
@@ -17,3 +19,19 @@ Equipo:
 Isaac León 
 Karla Hernandez
 Emmanuel Gonzalez
+
+
+CLASE
+
+enoe3 <- ts(read.csv(("C:\\Users\\SALA-C22\\Downloads\\enoe3.csv"), header=T), frequency = 4, start = 2005)
+class (enoe3)
+desoparcial <- ts(enoe3[,1], start=2005, freq=4)
+asalariados<- ts(enoe3[,2], start=2005, freq=4)
+til<- ts(enoe3[,3], start=2005, freq=4)
+smultiple<- ts.intersect(desoparcial,asalariados,til)
+plot(smultiple, main="Serie de Tiempo Múltiple", xlab="Años", ylab="Numero de Personas", col="deepskyblue4")
+smultiple2<-window(smultiple, start=c(2005,1), end=c(2009,4))
+smultiple3<- window(smultiple, start=c(2010,1), end=c(2015,4))
+plot(smultiple2, main="Serie de Tiempo Múltiple", xlab="Años", ylab="Numero de Personas", col="deepskyblue4")
+plot(smultiple3, main="Serie de Tiempo Múltiple", xlab="Años", ylab="Numero de Personas", col="deepskyblue4")
+start(smultiple);end(smultiple)
